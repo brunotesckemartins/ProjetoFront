@@ -1,0 +1,21 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Tiago",
+      "email": "tiago@email.com",
+      "senha": "123456",
+      "perfil": "admin"
+    }
+  ],
+  "jogos": [
+    {
+      "id": "af05",
+      "titulo": "Elden Ring",
+      "genero": "RPG",
+      "plataforma": "PC",
+      "descricao": "Jogo de ação em mundo aberto",
+      "imagem": "https://link-da-imagem.jpg"
+    }
+  ]
+}
