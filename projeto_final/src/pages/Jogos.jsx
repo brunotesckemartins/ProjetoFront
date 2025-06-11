@@ -9,28 +9,28 @@ function Jogos() {
     genero: '',
     plataforma: '',
     descricao: '',
-    imagem: ''
+    imagem: '' // Podemos remover isso da UI, mas ainda manter a chave aqui para manter o estado consistente
   });
 
-  const [jogoEditando, setJogoEditando] = useState(null); // Estado para controle de edição
+  const [jogoEditando, setJogoEditando] = useState(null);
 
   useEffect(() => {
     buscarJogos();
   }, []);
 
-  // Buscar jogos do servidor
   async function buscarJogos() {
     try {
       const resposta = await fetch('http://localhost:3001/jogos');
-      if (!resposta.ok) throw new Error('Erro ao buscar jogos');
+      if (!resposta.ok) throw new Error('Erro ao buscar jogos'); // Verifica se a resposta foi ok
       const dados = await resposta.json();
-      setJogos(dados);
+      setJogos(dados); // Atualiza o estado com os jogos recebidos
     } catch (err) {
-      setErro(err.message);
+      setErro('Falha ao buscar jogos: ' + err.message); // Mensagem mais informativa
+      console.error('Erro ao buscar jogos:', err); // Logar o erro no console para debugging
     }
   }
+  
 
-  // Adicionar novo jogo
   async function adicionarJogo(e) {
     e.preventDefault();
     try {
@@ -47,20 +47,18 @@ function Jogos() {
     }
   }
 
-  // Deletar jogo
   async function excluirJogo(id) {
     try {
       const resposta = await fetch(`http://localhost:3001/jogos/${id}`, {
         method: 'DELETE',
       });
       if (!resposta.ok) throw new Error('Erro ao excluir jogo');
-      buscarJogos(); // Atualiza a lista de jogos após exclusão
+      buscarJogos();
     } catch (err) {
       setErro(err.message);
     }
   }
 
-  // Editar jogo
   async function editarJogo(e) {
     e.preventDefault();
     try {
@@ -71,20 +69,18 @@ function Jogos() {
       });
       if (!resposta.ok) throw new Error('Erro ao editar jogo');
       setNovoJogo({ titulo: '', genero: '', plataforma: '', descricao: '', imagem: '' });
-      setJogoEditando(null); // Limpa o estado de edição
-      buscarJogos(); // Atualiza a lista de jogos após edição
+      setJogoEditando(null);
+      buscarJogos();
     } catch (err) {
       setErro(err.message);
     }
   }
 
-  // Definir jogo para edição
   function iniciarEdicao(jogo) {
-    setNovoJogo(jogo); // Preenche o formulário com os dados do jogo
-    setJogoEditando(jogo); // Define qual jogo está sendo editado
+    setNovoJogo(jogo);
+    setJogoEditando(jogo);
   }
 
-  // Atualiza o estado do novo jogo enquanto o usuário digita
   function handleChange(e) {
     const { name, value } = e.target;
     setNovoJogo((prev) => ({ ...prev, [name]: value }));
@@ -125,14 +121,15 @@ function Jogos() {
           placeholder="Descrição"
           required
         />
-        <input
+        {/* Remover o campo de URL da imagem */}
+        {/* <input
           name="imagem"
           value={novoJogo.imagem}
           onChange={handleChange}
           placeholder="URL da Imagem"
           required
-        />
-        <button type="submit">{jogoEditando ? 'Editar Jogo' : 'Adicionar Jogo'}</button>
+        /> */}
+        <button type="submit">{jogoEditando ? 'Concluir' : 'Adicionar Jogo'}</button>
       </form>
 
       <ul>
