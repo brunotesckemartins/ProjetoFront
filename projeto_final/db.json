@@ -1,21 +1,22 @@
 {
-  "usuarios": [
+  "users": [
     {
       "id": "1",
-      "nome": "Tiago",
-      "email": "tiago@email.com",
-      "senha": "123456",
-      "perfil": "admin"
+      "name": "Admin",
+      "email": "admin@example.com",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2023-05-01"
     }
   ],
-  "jogos": [
+  "games": [
     {
-      "id": "af05",
-      "titulo": "Elden Ring",
-      "genero": "RPG",
-      "plataforma": "PC",
-      "descricao": "Jogo de ação em mundo aberto",
-      "imagem": "https://link-da-imagem.jpg"
+      "id": "1",
+      "title": "The Witcher 3",
+      "developer": "CD Projekt Red",
+      "genre": "RPG",
+      "releaseYear": 2015,
+      "description": "Um RPG de mundo aberto..."
     }
   ]
 }

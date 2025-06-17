@@ -1,4 +1,3 @@
-// src/pages/Usuarios.js
 
 import { useEffect, useState } from 'react';
 
