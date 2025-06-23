@@ -1,6 +1,6 @@
-import React from 'react'
-import '../App.css'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../App.css';
 
 export default function HomePage() {
   return (
@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className="hero-text">
           <h1>Explore o Universo dos Games</h1>
           <p>Descubra os melhores lançamentos, jogos clássicos e tudo o que o mundo gamer tem a oferecer.</p>
-          <a href="/jogos" className="hero-button">Ver Jogos</a>
+          <Link to="/games" className="hero-button">Ir para o jogo</Link>
         </div>
         <div className="hero-image">
           <img
@@ -19,5 +19,5 @@ export default function HomePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
