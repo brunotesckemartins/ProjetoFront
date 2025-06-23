@@ -1,0 +1,138 @@
+.users-container {
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(25, 25, 30, 0.9);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 112, 209, 0.3);
+}
+
+.users-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.users-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.users-header button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  background: #0070d1;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.user-form-container {
+  background: #1a1a1f;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.user-form-container h2 {
+  margin: 0 0 1.5rem 0;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.user-card {
+  background: #1a1a1f;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #24242c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-name {
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.user-role {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.user-description {
+  color: #a0a0a0;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+.btn-edit {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 112, 209, 0.1);
+  border: 1px solid #0070d1;
+  color: #0070d1;
+  transition: all 0.3s ease;
+}
+
+.btn-delete {
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 59, 48, 0.1);
+  border: 1px solid #ff3b30;
+  color: #ff3b30;
+  transition: all 0.3s ease;
+}

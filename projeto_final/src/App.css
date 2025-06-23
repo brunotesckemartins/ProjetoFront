@@ -1,14 +1,14 @@
 :root {
-  --bg: #0f0f0f;
-  --surface: #1e1e1e;
-  --primary: #54dd94;
-  --primary-dark: #3ca774;
-  --secondary: #2c2c2c;
-  --text: #e0e0e0;
-  --text-muted: #888a8f;
-  --radius: 12px;
+  --bg: #0a0a0a;
+  --surface: #1a1a1f;
+  --primary: #0070d1;
+  --primary-dark: #0053a6;
+  --secondary: #24242c;
+  --text: #f2f2f2;
+  --text-muted: #a0a0a0;
+  --radius: 10px;
   --transition: 0.3s ease;
-  --font-title: 'Orbitron', sans-serif;
+  --font-title: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --max-width: 1280px;
   --gap: 28px;
@@ -24,33 +24,113 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: var(--text);
-  font-family: var(--font-body);
-  min-height: 100vh;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
 
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 
 .main-content {
-  flex-grow: 1;
+  all: unset !important; /* Reseta TUDO */
+  display: block !important;
+  width: 100% !important;
+  max-width: var(--max-width) !important;
+  margin: 0 auto !important;
+  padding: var(--gap) !important;
+  background: transparent !important;
+  color: inherit !important;
+}
+/* HERO SECTION PLAYSTATION STYLE */
+.hero-section {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 2rem auto;
   max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--gap);
+  background: linear-gradient(135deg, rgba(0,112,209,0.15) 0%, rgba(0,0,0,0.7) 100%),
+              url('https://gmedia.playstation.com/is/image/SIEPDC/ps5-design-image-block-01-en-14sep21?$1600px$');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 112, 209, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0,112,209,0.2) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-text, .hero-image {
+  position: relative;
+  z-index: 1;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  max-width: 600px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 112, 209, 0.5);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.hero-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 112, 209, 0.8);
+}
+
+
+.hero-image {
+  flex: 1.5; /* Aumenta o espaço da imagem */
+  min-width: 400px; /* Largura mínima maior */
+}
+
+.hero-image img {
+  width: 100%;
+  max-height: 500px; /* Altura aumentada */
+  object-fit: contain; /* Mantém proporções sem cortes */
+  transition: transform 0.3s ease; /* Efeito hover opcional */
+}
+
+.hero-image img:hover {
+  transform: scale(1.02); /* Efeito de zoom sutil */
 }
 
 /* TITULOS */
 h1, h2, h3 {
   font-family: var(--font-title);
   color: var(--primary);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   margin-bottom: 0.8rem;
   user-select: none;
 }
@@ -71,26 +151,26 @@ a:focus {
 /* NAVBAR */
 .navbar {
   background: var(--surface);
-  padding: 1.25rem 3rem 2rem; /* espaço extra embaixo */
+  padding: 1.25rem 3rem 2rem;
   border-radius: var(--radius);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 3rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   user-select: none;
+  border: 1px solid #2e2e2e;
 }
 
 .navbar h1 {
   font-size: 2rem;
   color: var(--primary);
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   margin-bottom: 1rem;
   cursor: default;
 }
 
-/* Menu centralizado abaixo do título */
 .navbar-links {
   display: flex;
   gap: 2rem;
@@ -102,14 +182,12 @@ a:focus {
 .navbar-links a {
   padding: 12px 24px;
   border-radius: var(--radius);
-  font-weight: 700;
-  color: var(--text);
-  background: var(--secondary);
+  font-weight: 600;
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
   box-shadow: 0 4px 10px #000a;
-  transition:
-    background-color var(--transition),
-    color var(--transition),
-    transform var(--transition);
+  transition: background-color var(--transition), color var(--transition), transform var(--transition);
   user-select: none;
   text-align: center;
   flex: 1;
@@ -118,48 +196,49 @@ a:focus {
 .navbar-links a:hover,
 .navbar-links a:focus {
   background-color: var(--primary);
-  color: #0f0f0f;
+  color: #fff;
   transform: translateY(-3px);
 }
 
-/* BUTTONS */
+/* BUTTON */
 .button {
-  padding: 1rem 3rem;
+  padding: 0.75rem 2rem;
   font-family: var(--font-title);
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #0f0f0f;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  font-weight: 600;
+  color: white;
+  background: var(--primary);
   border-radius: var(--radius);
   border: none;
-  box-shadow: 0 6px 20px rgba(84, 221, 148, 0.4);
+  box-shadow: 0 6px 16px rgba(0, 112, 209, 0.4);
   cursor: pointer;
-  transition: box-shadow 0.35s ease, transform 0.25s ease;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
   user-select: none;
 }
 .button:hover,
 .button:focus {
-  box-shadow: 0 10px 30px var(--primary);
-  transform: translateY(-4px) scale(1.05);
+  background: var(--primary-dark);
+  box-shadow: 0 10px 28px var(--primary);
+  transform: scale(1.03);
   outline: none;
 }
 
-/* CARDS */
+/* CARD */
 .card {
-  background: var(--surface);
+  background: var(--secondary);
   border-radius: var(--radius);
-  padding: 2.5rem;
-  margin-bottom: 3rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.75);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  border: 1px solid #2c2c2c;
   transition: box-shadow var(--transition), transform var(--transition);
   user-select: none;
 }
 .card:hover {
-  box-shadow: 0 8px 28px var(--primary);
-  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+  transform: translateY(-4px);
 }
 
-/* INPUTS E TEXTAREA */
+/* INPUT */
 input,
 textarea {
   width: 100%;
@@ -167,8 +246,8 @@ textarea {
   font-family: var(--font-body);
   font-size: 1rem;
   border-radius: var(--radius);
-  border: 2px solid var(--primary);
-  background-color: var(--bg);
+  border: 1px solid #333;
+  background-color: #121216;
   color: var(--text);
   transition: border-color var(--transition), box-shadow var(--transition);
   outline-offset: 3px;
@@ -182,8 +261,8 @@ textarea::placeholder {
 }
 input:focus,
 textarea:focus {
-  border-color: var(--primary-dark);
-  box-shadow: 0 0 12px var(--primary-dark);
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
   outline: none;
 }
 
@@ -196,7 +275,7 @@ footer {
   user-select: none;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVO */
 @media (max-width: 768px) {
   .navbar {
     padding-bottom: 1.5rem;
@@ -212,5 +291,94 @@ footer {
   }
   .main-content {
     padding: 1rem 1.5rem;
+  }
+  .hero-section {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+  .hero-image img {
+    max-height: 250px;
+  }
+}
+
+.app-container {
+  background: 
+    linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+    url('https://gmedia.playstation.com/is/image/SIEPDC/ps5-design-image-block-01-en-14sep21?$1600px$');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ESTILOS ESPECÍFICOS PARA PÁGINA DE JOGOS - Adicione no final do App.css */
+
+/* Container principal da página de jogos */
+.games-page {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(25, 25, 30, 0.9);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0, 112, 209, 0.3);
+}
+
+/* Layout de edição com imagem */
+.game-edit-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Preview da imagem do jogo */
+.game-image-preview {
+  background: var(--secondary);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-image-preview img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: calc(var(--radius) - 5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustes para o formulário */
+.game-form-container {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
+/* Botões de ação específicos */
+.game-action-button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .game-edit-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .game-image-preview {
+    margin-bottom: 1.5rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -1,23 +1,23 @@
-
 import React from 'react'
+import '../App.css'
 
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="home-container">
-      <h1 className="home-title">Bem-vindo à GameWiki</h1>
-      <p className="home-subtitle">Faça login para acessar o conteúdo completo.</p>
-
-      <div className="home-section">
-        <h2>Jogos</h2>
-        <p>Explore nossa coleção completa de jogos.</p>
+      <div className="hero-section">
+        <div className="hero-text">
+          <h1>Explore o Universo dos Games</h1>
+          <p>Descubra os melhores lançamentos, jogos clássicos e tudo o que o mundo gamer tem a oferecer.</p>
+          <a href="/jogos" className="hero-button">Ver Jogos</a>
+        </div>
+        <div className="hero-image">
+          <img
+            src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1749182199"
+            alt="Banner destaque"
+          />
+        </div>
       </div>
-
-      <div className="home-section">
-        <h2>Novidades</h2>
-        <p>Fique por dentro dos últimos lançamentos.</p>
-      </div>
-
     </div>
   )
 }

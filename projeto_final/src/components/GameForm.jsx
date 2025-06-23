@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function GameForm({ gameData = {}, onSave }) {
   const [game, setGame] = useState({
@@ -6,19 +6,46 @@ export default function GameForm({ gameData = {}, onSave }) {
     developer: gameData.developer || '',
     genre: gameData.genre || '',
     releaseYear: gameData.releaseYear || '',
-    description: gameData.description || ''
-  })
+    description: gameData.description || '',
+    imageUrl: gameData.imageUrl || '' // Novo campo adicionado
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setGame(prev => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setGame(prev => ({ ...prev, [name]: value }));
+  };
 
   return (
     <form onSubmit={(e) => {
-      e.preventDefault()
-      onSave(game)
+      e.preventDefault();
+      onSave(game);
     }}>
+      <div className="mb-3">
+        <label className="form-label">URL da Imagem</label>
+        <input
+          type="text"
+          className="form-control"
+          name="imageUrl"
+          value={game.imageUrl}
+          onChange={handleChange}
+          placeholder="Cole a URL da imagem do jogo"
+        />
+        {game.imageUrl && (
+          <div className="mt-2">
+            <small>Pré-visualização:</small>
+            <img 
+              src={game.imageUrl} 
+              alt="Pré-visualização" 
+              className="img-thumbnail mt-1"
+              style={{ maxHeight: '100px' }}
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/150?text=Imagem+Inválida';
+              }}
+            />
+          </div>
+        )}
+      </div>
+      
       <div className="mb-3">
         <label className="form-label">Título</label>
         <input
@@ -83,5 +110,5 @@ export default function GameForm({ gameData = {}, onSave }) {
         Salvar Jogo
       </button>
     </form>
-  )
+  );
 }

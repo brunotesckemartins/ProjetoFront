@@ -1,22 +1,33 @@
 {
   "users": [
     {
-      "id": "1",
       "name": "Admin",
       "email": "admin@example.com",
-      "password": "admin123",
+      "password": "",
       "role": "admin",
-      "createdAt": "2023-05-01"
+      "description": "administrador do site",
+      "profileImage": "https://wallpapers.com/images/hd/xbox-360-profile-pictures-5tsfsz64h3jkz31g.jpg",
+      "id": "1"
     }
   ],
   "games": [
     {
-      "id": "1",
       "title": "The Witcher 3",
       "developer": "CD Projekt Red",
       "genre": "RPG",
       "releaseYear": 2015,
-      "description": "Um RPG de mundo aberto..."
+      "description": "Um RPG de mundo aberto...",
+      "imageUrl": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000033071/3f7ee6aa3482b514bd443e116022b038a9728f017916ed37da3f09f731a7d5f2",
+      "id": "1"
+    },
+    {
+      "title": "Black Myth Wukong",
+      "developer": "Game Science",
+      "genre": "RPG e Ação",
+      "releaseYear": "2024",
+      "description": "Um jogo chinês sobre a lenda de Wuking, que concorreu ao GOTY",
+      "imageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1749182199",
+      "id": "57bc"
     }
   ]
 }

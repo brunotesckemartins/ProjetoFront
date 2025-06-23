@@ -1,87 +1,107 @@
-import React, { useState, useEffect } from 'react'
-import { getUsers, deleteUser } from '../services/userService'
-import UserForm from '../components/UserForm'
+import React, { useState, useEffect } from 'react';
+import { getUsers, deleteUser, createUser, updateUser } from '../services/userService';
+import UserForm from '../components/UserForm';
+import './UsersPage.css';
 
 export default function UsersPage() {
-  const [users, setUsers] = useState([])
-  const [editingUser, setEditingUser] = useState(null)
+  const [users, setUsers] = useState([]);
+  const [editingUser, setEditingUser] = useState(null);
 
   useEffect(() => {
-    loadUsers()
-  }, [])
+    loadUsers();
+  }, []);
 
   const loadUsers = async () => {
     try {
-      const data = await getUsers()
-      setUsers(data)
+      const data = await getUsers();
+      setUsers(data);
     } catch (error) {
-      alert(error.message)
+      alert(error.message);
     }
-  }
+  };
 
   const handleDelete = async (id) => {
     if (window.confirm('Tem certeza que deseja excluir este usuário?')) {
       try {
-        await deleteUser(id)
-        loadUsers()
+        await deleteUser(id);
+        loadUsers();
       } catch (error) {
-        alert(error.message)
+        alert(error.message);
       }
     }
-  }
+  };
 
-  const handleSave = async (userData) => {
-    // Implemente a lógica de save/update aqui
-    // Depois:
-    setEditingUser(null)
-    loadUsers()
+ const handleSave = async (userData) => {
+  try {
+    if (editingUser?.id) {
+      await updateUser(editingUser.id, userData);
+    } else {
+      await createUser(userData);
+    }
+    setEditingUser(null);
+    loadUsers();
+  } catch (error) {
+    alert('Erro ao salvar usuário: ' + error.message);
   }
+};
+
 
   return (
-    <div className="container mt-4">
-      <h1>Gerenciar Usuários</h1>
-      
+    <div className="users-container">
+      <div className="users-header">
+        <h1>Gerenciar Usuários</h1>
+        {!editingUser && (
+          <button onClick={() => setEditingUser({})}>
+            <i className="fas fa-plus"></i> Adicionar Usuário
+          </button>
+        )}
+      </div>
+
       {editingUser ? (
-        <div className="card mb-4">
-          <div className="card-body">
-            <h2 className="card-title">
-              {editingUser.id ? 'Editar Usuário' : 'Novo Usuário'}
-            </h2>
-            <UserForm 
-              userData={editingUser} 
-              onSave={handleSave} 
-            />
-          </div>
+        <div className="user-form-container">
+          <h2>{editingUser.id ? 'Editar Usuário' : 'Novo Usuário'}</h2>
+          <UserForm userData={editingUser} onSave={handleSave} />
         </div>
       ) : (
-        <div className="list-group">
+        <div className="user-grid">
           {users.map(user => (
-            <div key={user.id} className="list-group-item">
-              <div className="d-flex justify-content-between align-items-center">
-                <div>
-                  <h5>{user.name}</h5>
-                  <p className="mb-1">Email: {user.email}</p>
-                  <small>Tipo: {user.role === 'admin' ? 'Administrador' : 'Usuário Normal'}</small>
+            <div key={user.id} className="user-card">
+              <div className="user-info">
+                <div className="user-avatar">
+                  {user.profileImage ? (
+                    <img
+                      src={user.profileImage}
+                      alt="Foto do usuário"
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <i className="fas fa-user" style={{ color: '#a0a0a0' }}></i>
+                  )}
                 </div>
                 <div>
-                  <button 
-                    onClick={() => setEditingUser(user)} 
-                    className="btn btn-sm btn-primary me-2"
-                  >
-                    Editar
-                  </button>
-                  <button 
-                    onClick={() => handleDelete(user.id)} 
-                    className="btn btn-sm btn-danger"
-                  >
-                    Excluir
-                  </button>
+                  <h3 className="user-name">{user.name}</h3>
+                  <p className="user-role" style={{ color: user.role === 'admin' ? '#0070d1' : '#a0a0a0' }}>
+                    {user.role === 'admin' ? 'Administrador' : 'Usuário Normal'}
+                  </p>
                 </div>
+              </div>
+
+              <p className="user-description">
+                {user.description || 'Nenhuma descrição fornecida'}
+              </p>
+
+              <div className="user-actions">
+                <button className="btn-edit" onClick={() => setEditingUser(user)}>
+                  <i className="fas fa-edit"></i> Editar
+                </button>
+                <button className="btn-delete" onClick={() => handleDelete(user.id)}>
+                  <i className="fas fa-trash"></i> Excluir
+                </button>
               </div>
             </div>
           ))}
         </div>
       )}
     </div>
-  )
+  );
 }

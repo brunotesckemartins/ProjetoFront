@@ -1,6 +1,5 @@
 import api from './api';
 
-// Buscar todos os usuários
 export async function getUsers() {
   try {
     const response = await api.get('/users');
@@ -11,7 +10,26 @@ export async function getUsers() {
   }
 }
 
-// Deletar um usuário pelo ID
+export async function createUser(userData) {
+  try {
+    const response = await api.post('/users', userData);
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao criar usuário:', error);
+    throw error;
+  }
+}
+
+export async function updateUser(id, userData) {
+  try {
+    const response = await api.put(`/users/${id}`, userData);
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao atualizar usuário:', error);
+    throw error;
+  }
+}
+
 export async function deleteUser(id) {
   try {
     const response = await api.delete(`/users/${id}`);
