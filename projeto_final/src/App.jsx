@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 import GamesPage from "./pages/GamesPage";
 import UsersPage from "./pages/UsersPage";
 import LoginPage from "./pages/LoginPage";
-import MeusJogosPage from "./pages/MyGames";
+
 import ProfilePage from "./pages/ProfilePage";
 import PrivateRoute from "./routes/PrivateRoute";
 import "./App.css";
@@ -27,14 +27,6 @@ function App() {
                 element={
                   <PrivateRoute requireAdmin={true}>
                     <UsersPage />
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/meus-jogos"
-                element={
-                  <PrivateRoute>
-                    <MeusJogosPage />
                   </PrivateRoute>
                 }
               />

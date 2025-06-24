@@ -6,23 +6,23 @@
       "password": "123",
       "role": "admin",
       "description": "administrador do site",
-      "profileImage": "https://wallpapers.com/images/hd/xbox-360-profile-pictures-5tsfsz64h3jkz31g.jpg",
+      "profileImage": "https://cdn.mos.cms.futurecdn.net/uuGQHX87wanVbDteg47skM.jpg",
       "id": "1"
     },
     {
-      "id": "0b26",
       "name": "Bruno",
       "email": "bruno@example.com",
-      "password": "bruno123",
+      "password": "123",
       "role": "user",
       "description": "apenas um perfil normal",
-      "profileImage": "https://pbs.twimg.com/profile_images/1356894101854117889/kTufYIud_400x400.jpg"
+      "profileImage": "https://i.redd.it/memes-i-found-on-pinterest-that-would-cure-arthurs-tb-v0-572cnive9ouc1.jpg?width=736&format=pjpg&auto=webp&s=106302feff66bd52c9af7ceee7f55eb42e4de127",
+      "id": "0b26"
     },
     {
       "id": "3edf",
       "name": "tiago",
       "email": "tiago@example.com",
-      "password": "tiago123",
+      "password": "123",
       "role": "user",
       "description": "apenas um usuario normal",
       "profileImage": "https://avatars.fastly.steamstatic.com/4f7bcfd19d6cfaec1b48a8d5b6512100e46b3059_full.jpg"
@@ -55,6 +55,92 @@
       "releaseYear": "2019",
       "description": "Torne-se um shinobi extremamente talentoso, o \"lobo de um braço\". Após ser derrotado por um samurai sombrio Ashina, desperte para o seu destino, recupere o seu mestre e se vingue do seu inimigo a todo custo.",
       "imageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/capsule_616x353.jpg?t=1726158438"
+    },
+    {
+      "id": "0f6e",
+      "title": "Red Dead Redemption 2",
+      "developer": "Rockstar",
+      "genre": "Mundo Aberto",
+      "releaseYear": "2017",
+      "description": "Melhor jogo do mundo ",
+      "imageUrl": "https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg?resize=1&w=480&h=270&quality=medium",
+      "ownerId": "1"
+    },
+    {
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "developer": "Nintendo",
+      "genre": "Ação/Aventura",
+      "releaseYear": 2017,
+      "description": "Explore um vasto mundo aberto enquanto desvenda segredos e derrota inimigos para salvar Hyrule.",
+      "imageUrl": "https://www.nintendo.com/eu/media/images/10_share_images/games_15/wiiu_14/SI_WiiU_TheLegendOfZeldaBreathOfTheWild_image1600w.jpg",
+      "id": "001"
+    },
+    {
+      "title": "God of War",
+      "developer": "Santa Monica Studio",
+      "genre": "Ação",
+      "releaseYear": 2018,
+      "description": "Siga a jornada de Kratos e seu filho Atreus pelos reinos da mitologia nórdica.",
+      "imageUrl": "https://image.api.playstation.com/vulcan/img/rnd/202010/2217/p3pYq0QxntZQREXRVdAzmn1w.png",
+      "id": "002"
+    },
+    {
+      "title": "Minecraft",
+      "developer": "Mojang Studios",
+      "genre": "Sandbox",
+      "releaseYear": 2011,
+      "description": "Construa e explore mundos infinitos feitos de blocos neste jogo de sobrevivência e criatividade.",
+      "imageUrl": "https://assets.nintendo.com/image/upload/ar_16:9,c_lpad,w_1240/b_white/f_auto/q_auto/ncom/software/switch/70070000016597/0a33bcaba879403460afe2ff2aafaaefeede964e0fc11a430f71077867cc87f1",
+      "id": "003"
+    },
+    {
+      "title": "Hollow Knight",
+      "developer": "Team Cherry",
+      "genre": "Metroidvania",
+      "releaseYear": 2017,
+      "description": "Explore cavernas misteriosas, enfrente inimigos e descubra segredos neste jogo de ação e plataforma.",
+      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/capsule_616x353.jpg?t=1695270428",
+      "id": "005"
+    },
+    {
+      "id": "697e",
+      "title": "Death Stranding",
+      "developer": "Kojima Productions",
+      "genre": "Ação e Aventura",
+      "releaseYear": "2019",
+      "description": "Em um futuro próximo, explosões misteriosas abalaram o planeta, desencadeando uma série de eventos sobrenaturais conhecidos como Death Stranding . Com criaturas espectrais assolando a paisagem e o planeta à beira da extinção em massa, cabe a Sam viajar pelo deserto devastado e salvar a humanidade da extinção.",
+      "imageUrl": "https://cdn.awsli.com.br/600x700/1041/1041512/produto/144255309/death-stranding---pc-c-digo-digital-oupgi7qe1q.jpg",
+      "ownerId": "1"
+    },
+    {
+      "id": "019e",
+      "title": "It Takes Two",
+      "developer": "Hazelight Studios",
+      "genre": "Plataforma, Quebra-Cabeça, Ação e Aventura",
+      "releaseYear": "2020",
+      "description": "Um jogo de plataforma e aventura cooperativo, desenvolvido pela Hazelight Studios e publicado pela Electronic Arts, que exige que dois jogadores trabalhem juntos para progredir na história e resolver desafios. O jogo conta a história de Cody e May, um casal que, após um feitiço, se transforma em bonecos e precisa superar suas diferenças para restaurar suas vidas normais",
+      "imageUrl": "https://i0.wp.com/www.portaldonerd.com.br/wp-content/uploads/2024/10/it-takes-two.jpg",
+      "ownerId": "1"
+    },
+    {
+      "id": "07f9",
+      "title": "Metal Gear Solid V: The Phantom Pain",
+      "developer": "Konami",
+      "genre": "Furtivo,Mundo Aberto e Ação",
+      "releaseYear": "2014",
+      "description": "Metal Gear Solid 5 é um jogo de ação e stealth onde o protagonista, Venom Snake, lidera sua equipe para reconstruir uma base e buscar vingança contra inimigos poderosos, em um mundo aberto cheio de missões táticas.",
+      "imageUrl": "https://cdn.awsli.com.br/2500x2500/1610/1610163/produto/177701005/poster-metal-gear-solid-5-a-58ead20e.jpg",
+      "ownerId": "1"
+    },
+    {
+      "id": "efe9",
+      "title": " S.T.A.L.K.E.R. 2",
+      "developer": "GSC Game World",
+      "genre": "FPS, Survival Horror e Ação e Aventura",
+      "releaseYear": "2024",
+      "description": "Em S.T.A.L.K.E.R. 2, o jogador assume o papel de Skif, um dos aventureiros que entra na Zona de Exclusão, é traído logo na primeira missão e se vê sozinho, praticamente desarmado, lutando para sobreviver e tentar se vingar dos responsáveis pela traição.",
+      "imageUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1643320/capsule_616x353.jpg?t=1736770066",
+      "ownerId": "1"
     }
   ]
 }

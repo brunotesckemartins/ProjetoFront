@@ -317,3 +317,15 @@ footer {
 
 
 /* ESTILOS ESPECÍFICOS PARA PÁGINA DE JOGOS - Adicione no final do App.css */
+.btn-primary-rounded {
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  background: #0070d1;
+  color: white;
+  transition: all 0.3s ease;
+  width: 100%;
+}

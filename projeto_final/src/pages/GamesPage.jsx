@@ -21,7 +21,7 @@ export default function GamesPage() {
 
   useEffect(() => {
     loadData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
 
   const loadData = async () => {
@@ -81,21 +81,25 @@ export default function GamesPage() {
         )}
       </div>
 
-      {editingGame && (
-        <div className="game-edit-container">
-          <div className="game-image-preview">
-            {editingGame.imageUrl ? (
-              <img
-                src={editingGame.imageUrl}
-                alt={`Capa do jogo ${editingGame.title}`}
-                className="game-preview-image"
-              />
-            ) : (
-              <div className="game-preview-placeholder">
-                Pré-visualização da capa
-              </div>
-            )}
-          </div>
+  {editingGame && (
+  <div className="game-edit-container">
+    <div className="game-image-preview">
+      {editingGame.imageUrl ? (
+        <img
+          src={editingGame.imageUrl}
+          alt={`Capa do jogo ${editingGame.title}`}
+          className="game-preview-image"
+          onError={e => {
+            e.currentTarget.src = "https://via.placeholder.com/300x400?text=Imagem+Inválida";
+          }}
+        />
+      ) : (
+        <div className="game-preview-placeholder">
+          Pré-visualização da capa
+        </div>
+      )}
+    </div>
+
 
           <div className="game-form-container">
             <GameForm gameData={editingGame} onSave={handleSave} />

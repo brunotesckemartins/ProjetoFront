@@ -48,9 +48,10 @@ export default function LoginPage() {
                     required
                   />
                 </div>
-                <button type="submit" className="btn btn-primary w-100">
-                  Entrar
-                </button>
+               <button type="submit" className="btn-primary-rounded">
+  Entrar
+</button>
+
               </form>
             </div>
           </div>

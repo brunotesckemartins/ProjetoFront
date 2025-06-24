@@ -106,9 +106,10 @@ export default function GameForm({ gameData = {}, onSave }) {
         />
       </div>
       
-      <button type="submit" className="btn btn-primary">
-        Salvar Jogo
-      </button>
+  <button type="submit" className="games-page-save-button">
+  <i className="fas fa-save"></i> Salvar Jogo
+</button>
+
     </form>
   );
 }

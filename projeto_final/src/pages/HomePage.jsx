@@ -13,7 +13,7 @@ export default function HomePage() {
         </div>
         <div className="hero-image">
           <img
-            src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1749182199"
+            src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2023/09/collage-maker-18-sep-2023-10-44-pm-51.jpg?q=70&fit=contain&w=1200&h=628&dpr=1"
             alt="Banner destaque"
           />
         </div>
