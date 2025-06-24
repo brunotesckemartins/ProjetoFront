@@ -60,6 +60,10 @@ projeto_final/
     *   **Biblioteca:** React
     *   **Build Tool:** Vite
     *   **Requisições HTTP:** Axios
+    *   **React Router DOM**
+    *   **JSON Server:** Fake API REST para a persistência de dados(db.json)
+    *   **Node.js**
+    *   **NPM:** 
 
  
 ## Como Executar a Aplicação Completa
@@ -68,9 +72,8 @@ Siga os passos abaixo para configurar e rodar o ambiente de desenvolvimento loca
 
 ## Pré-requisitos
 
-*   [Node.js](https://nodejs.org/)
+*   [Node.js(versão LTS)](https://nodejs.org/)
 *   [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-*   [PostgreSQL](https://www.postgresql.org/download/) instalado e rodando.
 
 ## Clonando 
 
