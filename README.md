@@ -72,7 +72,7 @@ Siga os passos abaixo para configurar e rodar o ambiente de desenvolvimento loca
 
 ## Pré-requisitos
 
-*   [Node.js(versão LTS)](https://nodejs.org/)
+*   [Node.js (versão LTS)](https://nodejs.org/)
 *   [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
 
 ## Clonando 
@@ -88,12 +88,12 @@ cd projeto_final
 npm install
 ```
 
-3. **Em um terminal rode(atente-se em estar no diretório certo - ProjetoFront/projeto_final):**
+3. **Em um terminal rode:**
 ```bash
 npx json-server --watch db.json
 ```
 
-4. **Em outro terminal rode:**
+4. **Em outro terminal rode (atente-se em estar no diretório certo - ProjetoFront/projeto_final):**
 ```bash
 npm run dev
 ```
