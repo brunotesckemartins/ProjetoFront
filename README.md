@@ -96,10 +96,11 @@ npm run dev
 ```
 
 5. **Logue como Admin do site:**
-   ```text
-   Email : admin@example.com
-   Senha : 123
-   ```
+   
+```text
+ Email : admin@example.com
+ Senha : 123
+```
 
 ## Observações importantes : 
 
