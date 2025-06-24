@@ -85,17 +85,17 @@ cd projeto_final
 npm install
 ```
 
-3. **Em um terminal rode(atente-se em estar no diretório certo - ProjetoFront/projeto_final):* 
+3. **Em um terminal rode(atente-se em estar no diretório certo - ProjetoFront/projeto_final):**
 ```bash
 npx json-server --watch db.json
 ```
 
-4. **Em outro terminal rode:*
+4. **Em outro terminal rode:**
 ```bash
 npm run dev
 ```
 
-5. **Logue como Admin do site:*
+5. **Logue como Admin do site:**
    ```text
    Email : admin@example.com
    Senha : 123
@@ -103,7 +103,7 @@ npm run dev
 
 ## Observações importantes : 
 
-*Em db.json*
+**Em db.json**
 
 Mostra o email e a senha de todos os usuarios, caso tenha alguma dúvida ou queira alterar.
 
@@ -111,5 +111,5 @@ Mostra o email e a senha de todos os usuarios, caso tenha alguma dúvida ou quei
 
 Bruno Tescke Martins [GitHub](https://github.com/brunotesckemartins)
 
-*E colaboração de*
+**E colaboração de**
 Tiago Fritzen Palácio [GitHub](https://github.com/TiagoPalacio)
