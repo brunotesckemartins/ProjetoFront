@@ -3,11 +3,20 @@
     {
       "name": "Admin",
       "email": "admin@example.com",
-      "password": "",
+      "password": "123",
       "role": "admin",
       "description": "administrador do site",
       "profileImage": "https://wallpapers.com/images/hd/xbox-360-profile-pictures-5tsfsz64h3jkz31g.jpg",
       "id": "1"
+    },
+    {
+      "id": "0b26",
+      "name": "Bruno",
+      "email": "bruno@example.com",
+      "password": "bruno123",
+      "role": "user",
+      "description": "apenas um perfil normal",
+      "profileImage": "https://pbs.twimg.com/profile_images/1356894101854117889/kTufYIud_400x400.jpg"
     }
   ],
   "games": [
