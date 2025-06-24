@@ -6,22 +6,36 @@ import {
   updateGame,
   deleteGame,
 } from "../services/gameService";
+import { getUsers } from "../services/userService";
 import GameList from "../components/GameList";
 import GameForm from "../components/GameForm";
+import { useAuth } from "../services/auth";
+import "./GamesPage.css";
 
 export default function GamesPage() {
   const [games, setGames] = useState([]);
+  const [users, setUsers] = useState([]);
   const [editingGame, setEditingGame] = useState(null);
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   useEffect(() => {
-    loadGames();
+    loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const loadGames = async () => {
+  const loadData = async () => {
     try {
-      const gamesData = await getGames();
-      setGames(gamesData);
+      const allUsers = await getUsers();
+      setUsers(allUsers);
+
+      const allGames = await getGames();
+      if (user.role === "admin") {
+        setGames(allGames);
+      } else {
+        const userGames = allGames.filter((game) => game.ownerId === user.id);
+        setGames(userGames);
+      }
     } catch (error) {
       alert(error.message);
     }
@@ -32,9 +46,10 @@ export default function GamesPage() {
       if (editingGame && editingGame.id) {
         await updateGame(editingGame.id, gameData);
       } else {
-        await createGame(gameData);
+        const gameWithOwner = { ...gameData, ownerId: user.id };
+        await createGame(gameWithOwner);
       }
-      loadGames();
+      loadData();
       setEditingGame(null);
     } catch (error) {
       alert(error.message);
@@ -45,7 +60,7 @@ export default function GamesPage() {
     if (window.confirm("Tem certeza que deseja excluir este jogo?")) {
       try {
         await deleteGame(id);
-        loadGames();
+        loadData();
       } catch (error) {
         alert(error.message);
       }
@@ -53,44 +68,13 @@ export default function GamesPage() {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "1280px",
-        margin: "2rem auto",
-        padding: "2rem",
-        background: "rgba(25, 25, 30, 0.9)",
-        borderRadius: "10px",
-        border: "1px solid rgba(0, 112, 209, 0.3)",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <h1 style={{ margin: 0, fontSize: "2rem", color: "#fff" }}>
-          Catálogo de Jogos
-        </h1>
+    <div className="games-page-container">
+      <div className="games-page-header">
+        <h1 className="games-page-title">Catálogo de Jogos</h1>
         {!editingGame && (
           <button
             onClick={() => setEditingGame({})}
-            style={{
-              padding: "0.7rem 1.5rem",
-              borderRadius: "50px",
-              fontWeight: "600",
-              fontSize: "0.95rem",
-              cursor: "pointer",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              border: "none",
-              background: "#0070d1",
-              color: "white",
-              transition: "all 0.3s ease",
-            }}
+            className="games-page-add-button"
           >
             <i className="fas fa-plus"></i> Adicionar Jogo
           </button>
@@ -98,73 +82,27 @@ export default function GamesPage() {
       </div>
 
       {editingGame && (
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "300px 1fr",
-            gap: "2rem",
-            marginBottom: "3rem",
-          }}
-        >
-          <div
-            style={{
-              background: "#24242c",
-              borderRadius: "10px",
-              padding: "1rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              height: "fit-content",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-            }}
-          >
+        <div className="game-edit-container">
+          <div className="game-image-preview">
             {editingGame.imageUrl ? (
               <img
                 src={editingGame.imageUrl}
                 alt={`Capa do jogo ${editingGame.title}`}
-                style={{
-                  maxWidth: "100%",
-                  maxHeight: "400px",
-                  borderRadius: "5px",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.5)",
-                }}
+                className="game-preview-image"
               />
             ) : (
-              <div style={{ color: "#a0a0a0" }}>Pré-visualização da capa</div>
+              <div className="game-preview-placeholder">
+                Pré-visualização da capa
+              </div>
             )}
           </div>
 
-          <div
-            style={{
-              background: "#1a1a1f",
-              padding: "2rem",
-              borderRadius: "10px",
-            }}
-          >
+          <div className="game-form-container">
             <GameForm gameData={editingGame} onSave={handleSave} />
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "flex-end",
-                marginTop: "2rem",
-              }}
-            >
+            <div className="game-form-actions">
               <button
                 onClick={() => setEditingGame(null)}
-                style={{
-                  padding: "0.7rem 1.5rem",
-                  borderRadius: "50px",
-                  fontWeight: "600",
-                  fontSize: "0.95rem",
-                  cursor: "pointer",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-                  background: "transparent",
-                  border: "1px solid #0070d1",
-                  color: "#0070d1",
-                  transition: "all 0.3s ease",
-                }}
+                className="games-page-cancel-button"
               >
                 <i className="fas fa-times"></i> Cancelar
               </button>
@@ -175,6 +113,8 @@ export default function GamesPage() {
 
       <GameList
         games={games}
+        users={users}
+        isAdmin={user.role === "admin"}
         onEdit={(game) => {
           setEditingGame(game);
           window.scrollTo(0, 0);

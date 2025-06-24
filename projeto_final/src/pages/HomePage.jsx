@@ -8,8 +8,8 @@ export default function HomePage() {
       <div className="hero-section">
         <div className="hero-text">
           <h1>Explore o Universo dos Games</h1>
-          <p>Descubra os melhores lançamentos, jogos clássicos e tudo o que o mundo gamer tem a oferecer.</p>
-          <Link to="/games" className="hero-button">Ir para o jogo</Link>
+          <p>Mostre para o mundo os seus jogos favoritos e compartilhe aqui sua experiência.</p>
+          <Link to="/games" className="hero-button">Faça a sua própria lista de jogos</Link>
         </div>
         <div className="hero-image">
           <img

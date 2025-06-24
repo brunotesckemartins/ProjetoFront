@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../services/auth";
+import "./Navbar.css";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -15,37 +16,20 @@ export default function Navbar() {
   if (!user) return null; // não renderiza navbar sem login
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "1rem 2rem",
-        background: "#121212",
-        color: "white",
-      }}
-    >
+    <nav className="navbar-container">
       {/* logo / links principais */}
-      <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-        <h1 style={{ margin: 0 }}>GameZone</h1>
-        <Link to="/">Home</Link>
+      <div className="navbar-main-links">
+        <h1 className="navbar-logo">GameWiki</h1>
+        <Link to="/">Início</Link>
         <Link to="/games">Jogos</Link>
         {user.role === "admin" && <Link to="/users">Usuários</Link>}
       </div>
 
       {/* avatar + nome + menu */}
-      <div style={{ position: "relative" }}>
+      <div className="navbar-user-section">
         <button
           onClick={() => setOpen((o) => !o)}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            background: "none",
-            border: "none",
-            color: "inherit",
-            cursor: "pointer",
-          }}
+          className="navbar-user-button"
         >
           <span>{user.name}</span>
           <img
@@ -58,40 +42,22 @@ export default function Navbar() {
             onError={(e) => {
               e.target.src = "https://via.placeholder.com/40?text=👤";
             }}
-            style={{
-              width: 40,
-              height: 40,
-              borderRadius: "50%",
-              objectFit: "cover",
-              border: "2px solid #0070d1",
-            }}
+            className="navbar-avatar"
           />
         </button>
 
         {open && (
-          <div
-            style={{
-              position: "absolute",
-              right: 0,
-              top: "calc(100% + 0.5rem)",
-              background: "#1f1f1f",
-              border: "1px solid #333",
-              borderRadius: 8,
-              minWidth: 150,
-              zIndex: 1000,
-              padding: "0.5rem 0",
-            }}
-          >
+          <div className="navbar-dropdown-menu">
             <button
               onClick={() => {
                 setOpen(false);
                 navigate("/profile");
               }}
-              style={menuBtnStyle}
+              className="navbar-menu-button"
             >
               Ver perfil
             </button>
-            <button onClick={handleLogout} style={menuBtnStyle}>
+            <button onClick={handleLogout} className="navbar-menu-button">
               Sair
             </button>
           </div>
@@ -100,14 +66,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-const menuBtnStyle = {
-  display: "block",
-  width: "100%",
-  padding: "0.5rem 1rem",
-  background: "none",
-  border: "none",
-  color: "white",
-  textAlign: "left",
-  cursor: "pointer",
-};

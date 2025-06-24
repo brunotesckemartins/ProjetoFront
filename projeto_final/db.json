@@ -17,6 +17,15 @@
       "role": "user",
       "description": "apenas um perfil normal",
       "profileImage": "https://pbs.twimg.com/profile_images/1356894101854117889/kTufYIud_400x400.jpg"
+    },
+    {
+      "id": "3edf",
+      "name": "tiago",
+      "email": "tiago@example.com",
+      "password": "tiago123",
+      "role": "user",
+      "description": "apenas um usuario normal",
+      "profileImage": "https://avatars.fastly.steamstatic.com/4f7bcfd19d6cfaec1b48a8d5b6512100e46b3059_full.jpg"
     }
   ],
   "games": [
