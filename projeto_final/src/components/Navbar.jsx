@@ -13,13 +13,25 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <h1>GameZone</h1>
+      <h1>GameWiki</h1>
       <nav className="navbar-links">
         <Link to="/">Home</Link>
         <Link to="/games">Jogos</Link>
-        <Link to="/users">Usuários</Link>
+        {user && user.role === "admin" && <Link to="/users">Usuários</Link>}
         {user && (
-          <button onClick={handleLogout} className="btn-logout">
+          <button
+            onClick={handleLogout}
+            className="navbar-link"
+            style={{
+              background: "none",
+              border: "none",
+              color: "inherit",
+              cursor: "pointer",
+              font: "inherit",
+              padding: 0,
+              marginLeft: "1rem",
+            }}
+          >
             Sair
           </button>
         )}

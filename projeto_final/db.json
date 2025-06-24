@@ -37,6 +37,15 @@
       "description": "Um jogo chinês sobre a lenda de Wuking, que concorreu ao GOTY",
       "imageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2358720/header.jpg?t=1749182199",
       "id": "57bc"
+    },
+    {
+      "id": "a0e7",
+      "title": "Sekiro: Shadows Die Twice",
+      "developer": "FromSoftware",
+      "genre": "RPG e Combate ",
+      "releaseYear": "2019",
+      "description": "Torne-se um shinobi extremamente talentoso, o \"lobo de um braço\". Após ser derrotado por um samurai sombrio Ashina, desperte para o seu destino, recupere o seu mestre e se vingue do seu inimigo a todo custo.",
+      "imageUrl": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/814380/capsule_616x353.jpg?t=1726158438"
     }
   ]
 }
