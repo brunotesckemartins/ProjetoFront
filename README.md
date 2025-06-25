@@ -111,6 +111,14 @@ npm run dev
 
 Mostra o email e a senha de todos os usuarios, caso tenha alguma dúvida ou queira alterar.
 
+**Login**
+
+Acessado em 
+
+```text
+localhost:5173/login
+```
+
 ## Repositório mantido por 
 
 Bruno Tescke Martins [GitHub](https://github.com/brunotesckemartins)
