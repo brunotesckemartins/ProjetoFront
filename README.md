@@ -90,7 +90,7 @@ npm install
 
 3. **Em um terminal rode:**
 ```bash
-npx json-server --watch db.json
+npx json-server --watch db.json --port 3001
 ```
 
 4. **Em outro terminal rode (atente-se em estar no diretório certo - ProjetoFront/projeto_final):**
