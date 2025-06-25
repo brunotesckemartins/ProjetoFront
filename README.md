@@ -97,8 +97,13 @@ npx json-server --watch db.json --port 3001
 ```bash
 npm run dev
 ```
+6. **Caso não esteja logado, acesse a página de login em:**
 
-5. **Logue como Admin do site:**
+```text
+localhost:5173/login
+```  
+
+6. **Logue como Admin do site:**
    
 ```text
  Email : admin@example.com
@@ -110,14 +115,6 @@ npm run dev
 **Em db.json**
 
 Mostra o email e a senha de todos os usuarios, caso tenha alguma dúvida ou queira alterar.
-
-**Login**
-
-Acessado em 
-
-```text
-localhost:5173/login
-```
 
 ## Repositório mantido por 
 
