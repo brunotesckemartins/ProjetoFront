@@ -97,7 +97,7 @@ npx json-server --watch db.json --port 3001
 ```bash
 npm run dev
 ```
-6. **Caso não esteja logado, acesse a página de login em:**
+5. **Abra seu navegador e acesse a URL fornecida pelo Vite em:**
 
 ```text
 localhost:5173/login
