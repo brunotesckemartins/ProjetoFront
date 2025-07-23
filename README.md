@@ -118,7 +118,7 @@ Mostra o email e a senha de todos os usuarios, caso tenha alguma dúvida ou quei
 
 ## Repositório mantido por 
 
-Bruno Tescke Martins [GitHub](https://github.com/brunotesckemartins)
+Bruno Tescke Martins 
 
 **E colaboração de**
 Tiago Fritzen Palácio [GitHub](https://github.com/TiagoPalacio)
